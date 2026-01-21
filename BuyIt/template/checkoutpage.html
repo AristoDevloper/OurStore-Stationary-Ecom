@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Payment</title>
+    <link rel="stylesheet" href="{% static 'css-folder/eSewa-checkout.css' %}">
+</head>
+
+<body>
+    <div class="payment-box">
+        <h2>Pay with esewa</h2>
+
+        <!-- eSewa Form -->
+        <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST">
+            <input type="hidden" id="amount" name="amount" value="" required>
+            <input type="hidden" id="tax_amount" name="tax_amount" value="0" required>
+            <input type="hidden" id="total_amount" name="total_amount" value="" required>
+            <input type="hidden" id="transaction_uuid" name="transaction_uuid" value='' required>
+            <input type="hidden" id="product_code" name="product_code" value="EPAYTEST" required>
+            <input type="hidden" id="product_service_charge" name="product_service_charge" value="0" required>
+            <input type="hidden" id="product_delivery_charge" name="product_delivery_charge" value="0" required>
+            <input type="hidden" id="success_url" name="success_url" value="http://127.0.0.1:8000/order_placed/" required>
+            <input type="hidden" id="failure_url" name="failure_url" value="http://127.0.0.1:8000/" required>
+            <input type="hidden" id="signed_field_names" name="signed_field_names" value="total_amount,transaction_uuid,product_code" required>
+            <input type="hidden" id="signature" name="signature" value='' required>
+            
+            <input type="submit" class="pay-btn" value="Confirm">
+        </form>
+
+        <p class="note">You will be redirected to eSewa's secure payment page.</p>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>How to complete your payment:</h3>
+            <ul>
+                <li>Click <strong>Pay with eSewa</strong> to go to the eSewa login page.</li>
+                <li>Log in using your <strong>eSewa ID</strong> and <strong>password</strong>.</li>
+                <li>Do not refresh or close the page during payment.</li>
+                <li>Ensure the eSewa account you use is active and has sufficient balance.</li>
+            </ul>
+            <p><strong>Note:</strong> All transactions are secured by eSewa. We do not store your eSewa credentials.</p>
+        </div>
+    </div>
+    <script>
+        const orderId = sessionStorage.getItem('orderId');
+        const amount = document.getElementById('amount');
+        const totalAmount = document.getElementById('total_amount');
+        let transaction_uuid = document.getElementById('transaction_uuid');
+        let signature = document.getElementById('signature');
+
+        fetch('/esewa-payment/',{
+            method:'POST',
+            credentials:"same-origin",
+            headers:{
+                "Content-Type" : "application/json",
+            },
+            body:JSON.stringify({orderId})
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            const {total_amount,signature:sign,transaction_uuid:uuid} = data;
+            amount.value = total_amount;
+            totalAmount.value = total_amount; 
+            transaction_uuid.value = uuid;
+            signature.value = sign; 
+            sessionStorage.setItem('Payment-Type','Esewa Payment')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Cash on Delivery</title>
+    <link rel="stylesheet" href="{% static 'css-folder/COD-Confirm.css' %}">
+</head>
+<body>
+
+    <div class="card">
+        <div class="info-icon">ℹ️</div>
+
+        <h1>Confirm Cash on Delivery</h1>
+        <p>You have selected <strong>Cash on Delivery</strong> as your payment method.</p>
+
+        <div class="charge-box">
+            An extra Rs. 20 Cash on Delivery charge will be applied
+        </div>
+
+        <div class="total-box">
+            <div class="row">
+                <span>Subtotal</span>
+                <span id="subtotal">Rs. 980</span>
+            </div>
+            <div class="row">
+                <span>COD Charge</span>
+                <span id="COD-charge">Rs. 20</span>
+            </div>
+            <div class="row total">
+                <span>Total Payable</span>
+                <span id="total">Rs. 1000</span>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn confirm" onclick="OrderSuccessRedirect()">Yes, Confirm Order</button>
+            <button class="btn cancel" onclick="history.back()">Go Back</button>
+        </div>
+    </div>
+        <script src="{% static 'js-folder/codConfirm.js' %}"></script>
+</body>
+</html>

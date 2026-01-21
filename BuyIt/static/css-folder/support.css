@@ -1,0 +1,116 @@
+/* Reset horizontal overflow */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    background: white;
+    padding: 1rem 0; /* Remove huge side padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+}
+
+/* Navbar inner container */
+.navbar-container {
+    width: 100%;
+    max-width: 1200px;  /* keeps it responsive */
+    padding: 0 1rem;    /* small safe padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Links */
+.navbar nav a {
+    margin-left: 1.2rem;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    white-space: nowrap; /* keeps links from breaking weirdly */
+}
+
+.navbar nav a:hover,
+.navbar nav .active {
+    color: #007bff;
+}
+
+/* Contact container fixed */
+.contact-container {
+    max-width: 600px;
+    margin: 4rem auto;
+    background: white;
+    padding: 2rem 1.5rem; /* reduce padding to fit small screens */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+
+.contact-container h2 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.contact-container .sub {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Form */
+.contact-form .input-group {
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #fdfdfd;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: #005ecb;
+}

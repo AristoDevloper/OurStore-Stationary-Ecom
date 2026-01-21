@@ -1,0 +1,131 @@
+/* --------- GLOBAL STYLES --------- */
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* --------- NAVBAR --------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #273257;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* --------- ABOUT CONTAINER --------- */
+.about-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 30px;
+    font-size: 26px;
+}
+
+p {
+    font-size: 16px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.highlight {
+    font-weight: 600;
+}
+
+/* --------- IMAGE STYLES --------- */
+.about-img {
+    width: 180px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+}
+
+/* --------- SECTION STYLES --------- */
+.section {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.section.reverse {
+    flex-direction: row-reverse;
+}
+
+/* --------- HR LINE --------- */
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 30px 0;
+}
+
+/* --------- RESPONSIVE --------- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-container {
+        padding: 25px;
+    }
+
+    .section {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .section.reverse {
+        flex-direction: column !important;
+    }
+}

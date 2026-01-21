@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details</title>
+<link rel="stylesheet" href="{% static 'css-folder/product.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <h1 class="logo"><a href="/">Our Store</a></h1>
+    <div class="nav-links">
+        <a href="#">Login</a>
+        <a href="#">Support</a>
+        <a href="{% url 'About_Section' %}">About Us</a>
+        <a href="#">Contact</a>
+        <a href="{% url 'Cart' %}" id="open-cart" class="cart-link">🛒 Cart: <span id="cart-count">0</span></a>
+    </div>
+</nav>
+
+<!-- Product Details -->
+<div class="product-details">
+    <img src="https://img.freepik.com/free-photo/colorful-scissors-white-background_23-2148169487.jpg" alt="Product Image" id="product-img">
+    <div class="product-info">
+        <h2 id="product-name"></h2>
+        <p class="price" id="product-price"></p>
+        <p class="description" id="product-desc">
+            
+        </p>
+        <p class="features">
+            
+        </p>
+        <p class="delivery-info">
+            Delivery Time: <span>3-5 Business Days</span> <br>
+            Delivery Charges: <span>Rs.150</span>
+        </p>
+        <p class="stock-info" style="color:green; font-weight:600;">In Stock</p>
+
+        <div class="quantity-container">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" max="5">
+        </div>
+        <div>
+        <button class="buy-now-btn" id="buy-btn">Buy Now</button>
+        <button class="add-to-cart-btn" id="add-cart-btn">Add to Cart</button>
+        </div>
+
+        
+    </div>
+</div>
+
+<!-- Comments Section -->
+<div class="comment-section">
+ <div class="comment-input">
+    <textarea id="comment-text" placeholder="Add a comment..."></textarea>
+    <button id="submit-comment">Add Comment</button>
+    <p id="comment-error" class="comment-error"></p>
+</div>
+
+    <div class="comment">
+        <span class="comment-user">Alice</span> 
+        <span class="comment-time">• 2 hours ago</span>
+        <p class="comment-text">Great product! Fast delivery.</p>
+        <div class="comment-actions">
+            <button>Like</button>
+            <button>Reply</button>
+        </div>
+    </div>
+
+    <div class="comment">
+        <span class="comment-user">Bob</span> 
+        <span class="comment-time">• 1 day ago</span>
+        <p class="comment-text">The quality is amazing, highly recommend.</p>
+        <div class="comment-actions">
+            <button>Like</button>
+            <button>Reply</button>
+        </div>
+    </div>
+</div>
+<script src='{% static "js-folder/productv2.js" %}'></script>
+
+</body>
+</html>
