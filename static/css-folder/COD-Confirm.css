@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card {
+    background: #ffffff;
+    padding: 30px;
+    max-width: 420px;
+    width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.info-icon {
+    font-size: 42px;
+    color: #3498db;
+}
+
+h1 {
+    margin: 14px 0;
+    font-size: 23px;
+    color: #333;
+}
+
+p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.charge-box {
+    background: #eef6ff;
+    border: 1px solid #cfe3ff;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 18px 0;
+    color: #1f4fd8;
+    font-weight: bold;
+}
+
+.total-box {
+    margin-top: 18px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    text-align: left;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #444;
+}
+
+.row.total {
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+.confirm {
+    background: #2ecc71;
+    color: white;
+}
+
+.confirm:hover {
+    background: #27ae60;
+}
+
+.cancel {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.cancel:hover {
+    background: #cfcfcf;
+}

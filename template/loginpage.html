@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="{% static 'css-folder/login.css' %} ">
+</head>
+<body>
+  <main class="page">
+    <form class="card" autocomplete="off">
+      <div class="card-header">
+        <h1 class="brand">Our Store</h1>
+        <h2 class="title">Sign in with your Gmail</h2>
+      </div>
+
+      <label class="field">
+        <span class="label-text">Email</span>
+        <input type="email" id="email" name="email" class="login_details" placeholder="you@example.com" required>
+      </label>
+
+      <label class="field">
+        <span class="label-text">Password</span>
+        <input type="password" id="password" name="password" class="login_details" placeholder="Enter your password" required>
+      </label>
+
+      <div class="actions">
+        <a href="{% url 'register' %}" id="signup-btn" class="link">Sign Up</a>
+        <button id="submit-btn" class="primary">Login</button>
+      </div>
+    </form>
+  </main>
+  <script src='{% static "js-folder/login.js" %}'></script>
+</body>
+</html>

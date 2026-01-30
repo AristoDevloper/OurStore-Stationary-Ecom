@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stationery Shop</title>
+    <link rel="stylesheet" href="{% static 'css-folder/homepagev1.css' %}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1 class="logo">Our Store</h1>
+
+        <div class="search-container">
+            <input type="text" id="search-box" placeholder="Search products...">
+            <button id="search-btn">Search</button>
+        </div>
+
+        <div class="nav-links">
+            <a href="{% url 'login' %}" id="Login">Login</a>
+            <a href="{% url 'profilePage' %}" id="Profile">Profile</a>
+            <a href="{% url 'your_orders' %}" id="orders">Orders</a>
+            <a href="{% url 'About_Section' %}">About Us</a>
+            <a class="contact">Contact</a>
+            <a id="open-cart" class="cart-link">🛒 Cart: <span id="cart-count">0</span></a>
+        </div>
+    </nav>
+
+    <!-- Homepage -->
+    <main class="body" id="homepage">
+        <h2>Our Products</h2>
+        <div class="product-grid" id="home-products">
+            <!-- Product cards goes here using JS DOM -->
+            </div>
+        </div>
+
+    </main>
+    <!-- Search Page -->
+    <main class="body" id="searchpage" style="display: none;">
+        <h2>Search Results</h2>
+        <div class="product-grid" id="search-results"></div>
+    </main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Stationary</h3>
+            <p>Your one-stop shop for quality stationery items.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'About_Section' %}">About Us</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a class="contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <p>Email: support@stationary.com</p>
+            <p>Phone: +1 234 567 890</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="#">🌐</a>
+                <a href="#">📘</a>
+                <a href="#">📸</a>
+                <a href="#">🐦</a>
+            </div>
+    </footer>
+
+    <script src='{% static "/js-folder/homepage1.js" %}'></script>
+</body>
+</html>

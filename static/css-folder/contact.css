@@ -1,0 +1,122 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    color: #333;
+}
+
+body>.support-card{
+    align-self: center;
+    margin: 1rem;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 15px 25px;
+    color: white;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 2px 2px 1px gray;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.logo{
+    color: whitesmoke;
+}
+
+.support-card {
+    background: #fff;
+    width: 400px;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+p.subtitle {
+    margin-bottom: 1.5rem;
+    color: #6c757d;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    display: block;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    background-color: #f8f9fa;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.2);
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-top: 0.5rem;
+}
+
+button:hover {
+    background: #0069d9;
+}
+
+.support-info {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #e9ecef;
+    border-radius: 12px;
+    text-align: center;
+    color: #495057;
+}

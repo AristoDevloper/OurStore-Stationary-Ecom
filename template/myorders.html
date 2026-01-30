@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css-folder/Orders.css' %}">
+</head>
+<body>
+
+    <div class="order-container">
+        <div id="orders-wrapper">
+            <!--
+            <h1>Order Details</h1>
+
+             Order Summary 
+            <div class="order-summary">
+                <div class="summary-box">
+                    <span>Order ID</span>
+                    <strong id="order-id">#ORD123456</strong>
+                </div>
+                <div class="summary-box">
+                    <span>Payment Method</span>
+                    <strong id="payment-method">Online Payment</strong>
+                </div>
+                <div class="summary-box">
+                    <span>Order Status</span>
+                    <strong class="status">Confirmed</strong>
+                </div>
+                <div class="summary-box">
+                    <span>Delivery Address</span>
+                    <strong>Kathmandu, Nepal</strong>
+                </div>
+            </div>
+
+             Ordered Items 
+            <div class="order-items">
+                <div class="items">
+                    <div class="item">
+                        <div>
+                            <div class="item-name">Wireless Mouse</div>
+                            <div class="item-qty">Qty: 1</div>
+                        </div>
+                        <div class="item-price">Rs. 1,200</div>
+                    </div>
+
+                    <div class="item">
+                        <div>
+                            <div class="item-name">Mechanical Keyboard</div>
+                            <div class="item-qty">Qty: 1</div>
+                        </div>
+                        <div class="item-price">Rs. 4,500</div>
+                    </div>
+                
+                </div>
+
+                <div class="Delivery-charge">
+                    <span>Delivery Charge</span>
+                    <span id="Delivery-charge"></span>
+                </div>
+
+                <div class="codCharge">
+                    <span>Extra COD Charge</span>
+                    <span id="COD-charge"></span>
+                </div>
+
+                <div class="total">
+                    <span>Total</span>
+                    <span id="totalPrice"></span>
+                </div>
+            </div>
+        -->
+        </div>
+
+        <!-- Actions -->
+        <div class="buttons">
+            <a href="/" class="btn btn-primary">Back to Shop</a>
+        </div>
+    </div>
+    <script src='{% static "js-folder/orders.js" %}'></script>
+</body>
+</html>

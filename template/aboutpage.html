@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Our store</title>
+    <link rel="stylesheet" href="{% static 'css-folder/aboutv2.css' %}">
+</head>
+<body>
+
+    <!-- --------- NAVBAR --------- -->
+    <nav class="navbar">
+        <div class="logo">Our store</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a id="contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- --------- ABOUT CONTENT --------- -->
+    <div class="about-container">
+
+        <h1>About Us</h1>
+
+        <!-- SECTION 1 -->
+        <div class="section">
+            <img src="https://m.media-amazon.com/images/I/81xOup+lFeL._AC_SL1000__.jpg" class="about-img">
+            <p>
+                Welcome to <span class="highlight">Our Store</span>, your trusted online destination for top-quality stationery.
+                We believe creativity starts with the right tools, and we’re here to bring those tools straight to your desk.
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>Who We Are</h2>
+
+        <!-- SECTION 2 -->
+        <div class="section reverse">
+            <img src="https://nestasia.in/cdn/shop/articles/2_Blog_Banners_1080x1080_6_b6bc32ec-7444-4042-add6-9103c9ded1f3.png?v=1711693526" class="about-img">
+            <p>
+                Founded with a passion for paper and design, <span class="highlight">Our Store</span> brings together a curated 
+                selection of stationery products perfect for students, artists, professionals, and journal enthusiasts.
+            </p>
+        </div>
+
+        <hr>
+
+        <h2>What We Offer</h2>
+
+        <!-- SECTION 3 -->
+        <div class="section">
+            <img src="https://www.marthabrook.com/wp-content/uploads/2025/10/martha-brook-personalised-stationery-personalised-little-joys-gift-set-christmas-main-image-300x300.jpg" class="about-img">
+            <ul>
+                <li>Premium notebooks & planners</li>
+                <li>Pens, markers & writing tools</li>
+                <li>Art supplies for creators</li>
+                <li>Office & school necessities</li>
+                <li>Unique and stylish desk accessories</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>Why Choose Us</h2>
+
+        <!-- SECTION 4 -->
+        <div class="section reverse">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO9_wvfizp9h_LvOV4y2kTQBzykprwxKDvXg&s" class="about-img">
+            <ul>
+                <li>✔ High-quality, hand-selected products</li>
+                <li>✔ Affordable pricing</li>
+                <li>✔ Fast & reliable delivery</li>
+                <li>✔ Friendly customer support</li>
+                <li>✔ Eco-friendly stationery options</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>Our Promise</h2>
+
+        <!-- SECTION 5 -->
+        <div class="section">
+            <img src="https://images.unsplash.com/photo-1631173716529-fd1696a807b0?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3RhdGlvbmVyeXxlbnwwfHwwfHx8MA%3D%3D" class="about-img">
+            <p>
+                We’re not just a stationery store — we’re a community of creators and dreamers.
+                Our aim is to inspire productivity and spark creativity in everything you do.
+            </p>
+        </div>
+
+        <hr>
+
+        <p>Thank you for choosing <span class="highlight">Our Store</span>. Let’s create something wonderful together!</p>
+
+    </div>
+
+    <script>
+        const contactLink = document.getElementById('contact');
+
+        fetch('/authorizationChecker/',{
+            method:'GET',
+            credentials:"same-origin"
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            const {Authorized} = data
+            if(Authorized){
+                contactLink.addEventListener('click',()=>{
+                    window.location.href = '/contactUs/'
+                })
+            }
+            else {
+                contactLink.addEventListener('click',()=>{
+                    window.location.href = '/login/'
+                })
+        }})
+    const logo = document.querySelector(".logo");
+    logo.addEventListener("click",(e)=>{
+        window.location.href = "/";
+    })
+    </script>
+</body>
+</html>
